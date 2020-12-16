@@ -3,3 +3,11 @@
   <input type="text" #newquery>
   <button (click)="submit(newquery)">Search</button>
 </p>
+<div *ngFor="let product of results.products">
+  <h4>{{product.product_name}}</h4>
+  <h3>{{product.brands}}</h3>
+  <h3>{{product.manufacturing_places}}</h3>
+  <img class="card-img-top img-responsive" style="width:256px;height:256px;" src="{{ product.image_front_url }}" alt="Card image">
+  <br>
+</div>
+{{results|json}}
